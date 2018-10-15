@@ -24,8 +24,40 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // TODO: Add app bar (102)
       // TODO: Add a grid view (102)
+      appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(
+              Icons.menu,
+              semanticLabel: 'menu',
+            ),
+            onPressed: () {
+              print('Menu Button');
+            }
+        ),
+        title: Text('SHRINE'),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.search,
+                semanticLabel: 'search',
+              ),
+              onPressed: () {
+                print('Search Button');
+              }
+          ),
+          IconButton(
+              icon: Icon(
+                Icons.tune,
+                semanticLabel: 'filter',
+              ),
+              onPressed: () {
+                print('Filter Button');
+              }
+          )
+        ],
+      ),
       body: Center(
-        child: Text('You did it!'),
+        child: Text('Welcome to Enochval\'s official first flutter appication'),
       ),
     );
   }

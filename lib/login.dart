@@ -37,6 +37,39 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 120.0),
+            TextField(
+              controller: _usernameController,
+              decoration: InputDecoration(
+                filled: true,
+                labelText: 'Username',
+              ),
+            ),
+            SizedBox(height: 12.0,),
+            TextField(
+              controller: _passwordController,
+              decoration: InputDecoration(
+                filled: true,
+                labelText: 'Password'
+              ),
+              obscureText: true,
+            ),
+            ButtonBar(
+              children: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      _usernameController.clear();
+                      _passwordController.clear();
+                    },
+                    child: Text('Cancel')
+                ),
+                RaisedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('Login'),
+                )
+              ],
+            )
             // TODO: Wrap Username with PrimaryColorOverride (103)
             // TODO: Remove filled: true values (103)
             // TODO: Wrap Password with PrimaryColorOverride (103)
@@ -48,5 +81,8 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+final _usernameController = TextEditingController();
+final _passwordController = TextEditingController();
 
 // TODO: Add PrimaryColorOverride (103)
